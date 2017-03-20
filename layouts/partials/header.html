@@ -39,20 +39,9 @@
 
         <!--[if lte IE 8]><script src="{{ "/js/ie/html5shiv.js" | relURL }}"></script><![endif]-->
 
-        <!-- Keeping the deprecated param, minifiedFilesCSS, for now. The new param
-             that replaces this is customCSS. Utilizing a scratch variable cssFiles
-             to keep the deprecated param. -->
-        {{ if isset .Site.Params "minifiedFilesCSS" }}
-            {{ $.Scratch.Set "cssFiles" .Site.Params.minifiedFilesCSS }}
-        {{ else if isset .Site.Params "customCSS" }}
-            {{ $.Scratch.Set "cssFiles" .Site.Params.customCSS }}
-        {{ else }}
-            {{ $.Scratch.Set "cssFiles" false }}
-        {{ end }}
-
         <!-- If the value "default" is passed into the param then we will first
              load the standard css files associated with the theme -->
-        {{ if or (in ($.Scratch.Get "cssFiles") "default") (eq ($.Scratch.Get "cssFiles") false) }}
+        {{ if or (in .Site.Params.customCSS "default") (not .Site.Params.customCSS) }}
             <link rel="stylesheet" href="{{ "/css/google-font.css" | relURL }}" />
             <link rel="stylesheet" href="{{ "/css/font-awesome.min.css" | relURL }}" />
             <link rel="stylesheet" href="{{ "/css/main.css" | relURL }}" />
@@ -60,11 +49,9 @@
             <link rel="stylesheet" href="{{ "/css/monokai-sublime.css" | relURL }}">
         {{ end }}
 
-        {{ if ne ($.Scratch.Get "cssFiles") false }}
-            {{ range $.Scratch.Get "cssFiles" }}
-                {{ if ne . "default" }}
-                    <link rel="stylesheet" href="{{ . | relURL }}" />
-                {{ end }}
+        {{ range .Site.Params.customCSS }}
+            {{ if ne . "default" }}
+                <link rel="stylesheet" href="{{ . | relURL }}" />
             {{ end }}
         {{ end }}
 
