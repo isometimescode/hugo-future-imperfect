@@ -70,6 +70,15 @@ url-link: create a hyperlink and add a target value to the link. _blank will be 
 
 Position 0 will be the link text. 1 will be the url and the last position will be value of the target attribute.
 
+### Google Maps Embed
+google-map: create an embedded responsive iframe using the [Google Maps Embed API](https://developers.google.com/maps/documentation/embed/) based on a location search. **You must create a Google API Key first!**
+
+```
+    {{< google-map q="Golden Gate Bridge" >}}
+```
+
+Where `q` is whatever name, address or place you want to search.
+
 ## View the theme on Hugo's built-in server
 
 Run the following command to view the content of the website:

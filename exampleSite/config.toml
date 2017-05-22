@@ -27,6 +27,10 @@ googleAnalytics = ""
     loadFavicon          = false
     faviconVersion       = ""
 
+    # See https://developers.google.com/maps/documentation/embed/ to
+    # generate a new API key from Google to allow the google-map shortcode
+    googleMapsKey        = "your-google-API-key-goes-here"
+
     # Load custom CSS or JavaScript files. The variable is an array so that you
     # can load multiple files if necessary. You can also load the standard theme
     # files by adding the value, "default".
