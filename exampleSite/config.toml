@@ -44,6 +44,9 @@ pluralizeListTitles = false
   # customJS             = ["default", "/path/to/file"]
   customCSS            = ["default"]
   customJS             = ["default"]
+  # See https://developers.google.com/maps/documentation/embed/ to
+  # generate a new API key from Google to allow the google-map shortcode
+  googleMapsKey        = ""
 
 # Disqus will take priority over Staticman (github.com/eduardoboucas/staticman)
 # due to its ease of use. Feel free to check out both and decide what you would

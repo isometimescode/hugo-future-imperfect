@@ -24,6 +24,7 @@ interested in seeing a live example.
 	- [img-post](#img-post)
 	- [img-fit](#img-fit)
 	- [url-link](#url-link)
+    - [google-map](#google-map)
 - [About the Author](#about-the-author)
 - [License](#license)
 
@@ -118,7 +119,7 @@ You will then be able to view your live website at [localhost:1313](http://local
 ## Shortcodes
 In addition to the native [Hugo shortcodes](https://gohugo.io/extras/shortcodes/),
 the theme also includes the following codes that I hope you find useful:
-fancybox, img-post, img-fit, and url-link.
+fancybox, img-post, img-fit, url-link, and google-map.
 
 ### fancybox
 [Fancybox](http://fancyapps.com/fancybox/3/) is a jQuery lightbox script for displaying images, videos and more. It is touch
@@ -192,6 +193,20 @@ Please refer to _layouts/shortcodes/url-link.html_ for more details on the funct
 
 Credit: [jpescador]
 
+---
+
+### google-map
+[Google Maps Embed API](https://developers.google.com/maps/documentation/embed/) is an embedded responsive iframe for showing a Google Map for any name, place, or location. The command is shown below:
+
+**Named**
+```
+{{< google-map q="Golden Gate Bridge" >}}
+```
+
+Please refer to _layouts/shortcodes/google-map.html_ for more details on the function.
+
+Credit: [isometimescode]
+
 ## About the Author
 
 Hugo Future Imperfect was ported by [Julio Pescador](https://jpescador.com). Extra
@@ -206,3 +221,4 @@ This theme is released under the MIT license. Please read the [license](https://
 
 [jpescador]: https://github.com/jpescador
 [pacollins]: https://github.com/pacollins
+[isometimescode]: https://github.com/isometimescode

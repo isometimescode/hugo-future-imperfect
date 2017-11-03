@@ -1,0 +1,15 @@
+{{ .Scratch.Add "qstring" (slice (querify "key" .Site.Params.googleMapsKey)) }}
+{{ .Scratch.Add "qstring" (slice (querify "q" (.Get "q"))) }}
+{{ .Scratch.Add "qstring" (slice (querify "attribution_source" .Site.Title)) }}
+{{ .Scratch.Add "qstring" (slice (querify "attribution_web_url" .Page.Permalink)) }}
+
+<div class="embed-container">
+  <iframe
+    frameborder="0"
+    style="border: 0"
+    width="600"
+    height="450"
+    src="https://www.google.com/maps/embed/v1/place?{{ delimit (.Scratch.Get "qstring") "&" | safeURL }}"
+    allowfullscreen>
+  </iframe>
+</div>
